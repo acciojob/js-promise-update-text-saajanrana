@@ -3,7 +3,14 @@ function getMessage() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("Hello, world!");
-		document.getElementById('output').innerHTML=resolve;
+		
     }, 1000);
   });
 }
+
+getMessage().then((message) => {
+    document.getElementById('output').textContent = message;
+  })
+  .catch((error) => {
+    console.error(error);
+  });
